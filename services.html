@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Digital Animation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" 
+          integrity="sha384-KyZXEJr+M5wg6v7W4QPSR5P6FhG6f7ip88JXY6ITqP7jfnSOo6w/y1mj8E0s9hf6" crossorigin="anonymous">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Digital Animated Background */
+        body {
+            font-family: Arial, sans-serif;
+            background: #000; /* Dark background */
+            overflow: hidden;
+            color: #fff;
+        }
+
+        .digital-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://cdn.pixabay.com/photo/2016/11/29/03/20/blue-1869834_960_720.jpg') repeat;
+            animation: moveBackground 20s linear infinite;
+            z-index: -1;
+        }
+
+        /* Animation for Background movement */
+        @keyframes moveBackground {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 100%; }
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            padding: 80px 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 50px;
+            color: #0ff;
+            text-shadow: 0 0 15px #0ff, 0 0 30px #0ff, 0 0 45px #0ff;
+        }
+
+        /* Service Section Styling */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .service {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .service h2 {
+            font-size: 24px;
+            color: #0ff;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #0ff;
+        }
+
+        .service p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Hover Effect for Services */
+        .service:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 30px rgba(0, 255, 255, 0.5);
+        }
+
+        /* WhatsApp Contact Button */
+        .whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+
+        .whatsapp a {
+            display: block;
+        }
+
+        .whatsapp img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Footer Section */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #111;
+            color: white;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Animation for Service Items */
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Media Query for Mobile */
+        @media (max-width: 768px) {
+            .services {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Digital Background Animation -->
+    <div class="digital-background"></div>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Our Services</h1>
+    </header>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="service">
+            <h2>AI Development</h2>
+            <p>We create intelligent AI systems that enhance your business processes, drive automation, and improve decision-making.</p>
+        </div>
+        <div class="service">
+            <h2>Web Development</h2>
+            <p>We build modern, responsive websites that provide a seamless user experience, driving engagement and growth.</p>
+        </div>
+        <div class="service">
+            <h2>iOS Development</h2>
+            <p>Our expert iOS developers craft smooth, user-friendly mobile applications for the Apple ecosystem, ensuring high performance and scalability.</p>
+        </div>
+        <div class="service">
+            <h2>Android Development</h2>
+            <p>We specialize in developing Android apps that are fast, secure, and optimized for an excellent user experience on all devices.</p>
+        </div>
+        <div class="service">
+            <h2>Website Code Update</h2>
+            <p>Our team provides professional website code updates to ensure your site remains up-to-date, secure, and functional.</p>
+        </div>
+        <div class="service">
+            <h2>Graphic Designing</h2>
+            <p>We create visually appealing graphic designs to help your brand stand out and communicate your message effectively.</p>
+        </div>
+    </section>
+
+    <!-- WhatsApp Contact Button -->
+    <div class="whatsapp">
+        <a href="https://wa.me/92303959798" target="_blank">
+            <img src="wahtsapp.jpg" alt="Contact us on WhatsApp">
+        </a>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Your Company Name. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS & Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" 
+            integrity="sha384-oBqDVmMz4fnFO9gybG1FvJ0oV+fS5+kG5K3mjRE5gShOjgD0HHOy8hG6Iff9p2n5" 
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" 
+            integrity="sha384-pzjw8f+ua7Kw1TIq0r2Ws2khK6jVh0z5sBzS8L1D9gKKn5qg/nz6je/gvFpp+z1z" 
+            crossorigin="anonymous"></script>
+</body>
+</html>

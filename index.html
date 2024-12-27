@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberCrafter - Home Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #121212;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        /* Full-screen background video */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .hero-section video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            opacity: 0.6;
+        }
+
+        .hero-section .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+            z-index: 1;
+        }
+
+        .hero-section h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero-section .btn {
+            font-size: 1.2rem;
+            padding: 12px 30px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero-section .btn:hover {
+            background-color: #0056b3;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        header nav a {
+            color: #fff;
+            font-size: 1.1rem;
+            text-decoration: none;
+            padding: 12px 20px;
+            margin: 0 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        header nav a:hover {
+            background-color: #fff;
+            color: #007bff;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .card {
+            border: none;
+            background-color: #333;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .faq ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .faq ul li {
+            margin: 20px 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .faq ul li strong {
+            font-weight: 700;
+        }
+
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            padding: 15px;
+            border-radius: 50%;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        .whatsapp-icon:hover {
+            background-color: #128c7e;
+        }
+
+        .leadership {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .leader {
+            width: 280px;
+            text-align: center;
+            margin-bottom: 40px;
+            background: #333;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .leader:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .leader img {
+            width: 100%;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .leader img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Scroll Animations */
+        .animate {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .animate.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header nav a {
+                font-size: 1rem;
+            }
+
+            .leadership {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .leader {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+        nav.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+    background-color: #121212; /* Dark background */
+}
+
+nav.container a {
+    text-decoration: none;
+    color: #fff; /* White text color */
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav.container a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+nav.container a:hover {
+    color: #ffeb3b; /* Change text color on hover (optional) */
+}
+
+nav.container a:hover::after {
+    width: 100%; /* Expand underline */
+}
+
+    </style>
+</head>
+<body>
+
+<!-- Hero Section with Technology Video Background -->
+<div class="hero-section">
+    <video autoplay muted loop>
+        <!-- Replace the video source with a tech-related video -->
+        <source src="video1.mp4" type="video/mp4"> 
+        Your browser does not support the video tag.
+    </video>
+    <div class="content">
+        <h1>Welcome to CyberCrafter</h1>
+        <p>Your Trusted Partner in Digital Innovation</p>
+        <a href="#services" class="btn">Explore Our Services</a>
+    </div>
+</div>
+
+<!-- Navigation Bar -->
+<header>
+    <nav class="container">
+        <a href="services.html">Services</a> <!-- Link to services.html page -->
+        <a href="portfolio.html">Portfolio</a>  <!-- Link to portfolio.html page -->
+        <a href="company.html">Company</a>   <!-- Link to company.html page -->
+        <a href="courses.html">Paid Course</a>
+    </nav>
+</header>
+
+
+<!-- Services Section -->
+<section id="services" class="animate">
+    <div class="container">
+        <h2>Our Services</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <h4>AI Development</h4>
+                    <p>We provide cutting-edge AI solutions to optimize your business processes.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <h4>Web Development</h4>
+                    <p>We build scalable and responsive websites with modern technology stacks.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <h4>IOS Development</h4>
+                    <p>Empowering Your Vision with Seamless and Innovative iOS Solutions.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <h4>Android Development</h4>
+                    <p>Crafting Smart and Scalable Android Apps Tailored to Your Needs.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4" style="margin-top: 1cm;"> <!-- Added margin-top here -->
+                <div class="card p-4">
+                    <h4>Website Code Update</h4>
+                    <p>Transforming ideas into dynamic websites that drive success and engagement.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <h4>Graphic Designing</h4>
+                    <p>Transforming ideas into captivating visuals with creative and impactful graphic designs.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Leadership Section -->
+<section id="company" class="animate">
+    <div class="container text-center">
+        <h2>Meet CyberCrafter Leadership</h2>
+        <div class="leadership">
+            <div class="leader">
+                <img src="image.1.jpg" alt="Leader 1">
+                <h4>Hashir ali</h4>
+                <p>CEO & Founder</p>
+                <p>Innovator and Digital Strategist</p>
+            </div>
+            <div class="leader">
+                <img src="img0.jpg" alt="Leader 2">
+                <h4>Hassan Raza</h4>
+                <p>COO & Founder</p>
+                <p>Operations Expert and Visionary</p>
+            </div>
+            <div class="leader">
+                <img src="img9.jpg" alt="Leader 3">
+                <h4>Danish Khan</h4>
+                <p>CTO & Co-Founder</p>
+                <p>Tech Enthusiast and Developer</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq" class="faq animate">
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <ul>
+            <li><strong>What type of services do CyberCrafter offer?</strong></li>
+            <li><strong>Do CyberCrafter offer post-development support?</strong></li>
+            <li><strong>How do I choose the right AI Chatbot development company for my business?</strong></li>
+            <li><strong>Why choose CyberCrafter as your AI development company?</strong></li>
+        </ul>
+    </div>
+</section>
+
+<!-- WhatsApp Icon -->
+<a href="https://wa.me/923039597498" class="whatsapp-icon">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Scroll Animations -->
+<script>
+    const elements = document.querySelectorAll('.animate');
+    
+    function checkInView() {
+        elements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                element.classList.add('in-view');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkInView);
+    checkInView(); // Trigger on page load
+</script>
+
+<!-- Bootstrap JS & jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

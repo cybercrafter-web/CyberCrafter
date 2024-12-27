@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CyberCrafter IT Company</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- AOS (Animate on Scroll) Library -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS for dark theme and layout -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .content {
+            color: rgba(255, 255, 255, 0.616);
+            text-align: center;
+            padding: 100px 20px;
+            background-color: rgba(243, 239, 239, 0);
+        }
+
+        .section {
+            padding: 80px 0;
+            text-align: center;
+            color: rgba(235, 230, 224, 0.884);
+        }
+
+        .section h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Video -->
+    <video class="background-video" autoplay muted loop>
+        <source src="video1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Main Content -->
+    <div class="content" data-aos="fade-up">
+        <h1>Welcome to CyberCrafter IT Company</h1>
+        <p>Innovating Your Digital Experience</p>
+    </div>
+
+    <!-- About Section -->
+    <div class="section" data-aos="fade-up">
+        <h2>About Us</h2>
+        <p>CyberCrafter IT Company was founded in 2024 by two visionary professionals, Hassan Raza and Hashir Ali, with the goal of revolutionizing the digital landscape. We specialize in providing cutting-edge technology solutions, including web development, iOS app development, graphic design, and IT consulting services. At CyberCrafter, we focus on delivering high-quality, user-centric solutions that help businesses enhance their online presence and achieve their goals. Our team of experts combines technical excellence with creativity to craft digital experiences that are not only functional but also visually engaging. We aim to empower businesses with the latest technological advancements, ensuring they stay ahead in the fast-paced digital world. With a commitment to innovation, quality, and client satisfaction, CyberCrafter IT Company is your trusted partner in navigating the digital future.</p>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="section" data-aos="fade-up">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us to discuss your next project and take your business to the next level.</p>
+        <a href="https://wa.me/923039597498" class="btn btn-light" target="_blank">Contact Us</a>
+    </div>
+    
+
+    <!-- Bootstrap JS and AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- AOS Initialization -->
+    <script>
+        AOS.init({
+            duration: 1000,
+            offset: 200
+        });
+    </script>
+
+</body>
+</html>

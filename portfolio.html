@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Professional Portfolio</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #333;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Hero Section with Live Background Video and Scroll Animation */
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #000;
+        }
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            animation: backgroundAnimation 30s linear infinite;
+        }
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: 3.5em;
+            margin: 0;
+            animation: fadeIn 2s ease-out;
+        }
+        .hero p {
+            font-size: 1.5em;
+            animation: fadeIn 2s ease-out;
+        }
+
+        /* Team Section Styling */
+        .team {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 0;
+            background-color: #1a1a1a;
+            animation: fadeInSection 2s ease-out;
+        }
+        .team-member {
+            width: 20%;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInMember 2s ease-out forwards;
+        }
+        .team-member-img {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        /* Previous Work Section */
+        .previous-work {
+            padding: 50px 0;
+            background-color: #333;
+            animation: fadeInSection 2s ease-out;
+        }
+        .work-cards {
+            display: flex;
+            justify-content: space-around;
+            opacity: 0;
+            animation: fadeInSection 2s ease-out forwards;
+        }
+        .work-card {
+            width: 30%;
+            background-color: #444;
+            padding: 20px;
+            text-align: center;
+        }
+        .work-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Client Reviews Section */
+        .client-reviews {
+            background-color: #222;
+            padding: 50px 0;
+            text-align: center;
+            animation: fadeInSection 2s ease-out;
+        }
+        .reviews {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .review {
+            width: 45%;
+            margin: 20px;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .rating {
+            font-size: 1.5em;
+            color: #ffdd00;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 1.5em;
+            color: white;
+            text-decoration: none;
+        }
+        .whatsapp-btn:hover {
+            background-color: #128c7e;
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 0; }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeInMember {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInSection {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+
+
+
+<!-- Full-screen Background with Live Video Animation -->
+<section class="hero">
+    <video class="hero-video" autoplay loop muted>
+        <source src="videoplayback.mp4" type="video/mp4">
+        
+    </video>
+    <div class="hero-content">
+        <h1>Welcome to Our Professional Portfolio</h1>
+        <p>Bringing your ideas to life with innovation, expertise, and trust.</p>
+    </div>
+</section>
+
+<!-- Our Team Section -->
+<section id="our-team" class="team">
+    <div class="team-member" id="member1">
+        <img src="img0.jpg" alt="Hassan Raza" class="team-member-img">
+        <h2>Hassan Raza</h2>
+        <p>Hassan is a passionate web developer with expertise in full-stack development. He believes in delivering quality work on time.</p>
+    </div>
+    <div class="team-member" id="member2">
+        <img src="image.1.jpg" alt="Hashir Ali" class="team-member-img">
+        <h2>Hashir Ali</h2>
+        <p>Hashir excels in iOS development and has collaborated with various IT companies to create seamless mobile applications.</p>
+    </div>
+    <div class="team-member" id="member3">
+        <img src="img9.jpg" alt="Danish Khan" class="team-member-img">
+        <h2>Danish Khan</h2>
+        <p>Danish is a dedicated backend developer with expertise in database management and server-side programming.</p>
+    </div>
+    <div class="team-member" id="member4">
+        <h2>Irfan </h2>
+        <p>Grafic Designer</p>
+    </div>
+    <div class="team-member" id="member5">
+        <h2>Yahya Ch</h2>
+        <p>IOS APPLICATION Developer</p>
+    </div>
+</section>
+
+<!-- Previous Work Section -->
+<section id="previous-work" class="previous-work">
+    <h2>Our Previous Work</h2>
+    <p>I have worked with numerous clients and companies, creating customized and professional websites, as well as providing iOS development and graphic design services. My work integrates creativity, technical expertise, and a strong focus on customer satisfaction. I design each project to be user-friendly, responsive, and visually appealing. I have developed websites for clients across various industries and provided innovative iOS applications tailored to their business needs. Additionally, I offer graphic design solutions to enhance the visual identity of brands. The quality of my work and my commitment to timely delivery have helped me establish a reputation as a reliable web developer, iOS developer, and graphic designer.
+
+
+
+
+
+
+    </p>
+    <div class="work-cards">
+        <div class="work-card">
+            <img src="WebDevelopmentImage.jpeg" alt="Web Development">
+            <h3>Web Development</h3>
+            <p>We designed and developed robust websites with excellent performance.</p>
+        </div>
+        <div class="work-card">
+            <img src="ios.jpeg" alt="iOS App">
+            <h3>iOS Application</h3>
+            <p>Creating seamless mobile applications with clean, responsive design.</p>
+        </div>
+        <div class="work-card">
+            <img src="collab.jpg" alt="Collaborations">
+            <h3>IT Company Collaborations</h3>
+            <p>Collaborated with IT companies to deliver cutting-edge technology solutions.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Client Reviews Section -->
+<section id="client-reviews" class="client-reviews">
+    <h2>Client Reviews</h2>
+    <div class="reviews">
+        <div class="review">
+            <p>"Their team provided excellent web development services, and we are happier with the results!"</p>
+            <div class="rating">
+                ★★★★☆
+            </div>
+            <p class="client-name">James Balkin - CEO, techhubuk Corp</p>
+        </div>
+        <div class="review">
+            <p>"The project was completed on time, and the team was very professional. Highly recommend!"</p>
+            <div class="rating">
+                ★★★★★
+            </div>
+            <p class="client-name">Anna Greene - Marketing Manager, Zenith Digital</p>
+        </div>
+        <div class="review">
+            <p>"Exceptional web design and development work! Our website has seen a significant increase in traffic."</p>
+            <div class="rating">
+                ★★★★★
+            </div>
+            <p class="client-name">John Smith - Founder, Smith Technologies</p>
+        </div>
+        <div class="review">
+            <p>"The attention to detail and quick turnaround was impressive. The website exceeded our expectations!"</p>
+            <div class="rating">
+                ★★★★★
+            </div>
+            <p class="client-name">Emily Davis - Creative Director, Bold Ventures</p>
+        </div>
+        <div class="review">
+            <p>"Great customer service and support. They understood our requirements and delivered perfectly!"</p>
+            <div class="rating">
+                ★★★★☆
+            </div>
+            <p class="client-name">Michael Taylor - Head of IT, Nexa Solutions</p>
+        </div>
+        <div class="review">
+            <p>"Working with this team was an absolute pleasure. They brought our vision to life in a seamless manner."</p>
+            <div class="rating">
+                ★★★★★
+            </div>
+            <p class="client-name">Sarah Lee - Co-Founder, Urban Pulse</p>
+        </div>
+        <div class="review">
+            <p>"Fantastic experience! The website is user-friendly, aesthetically pleasing, and highly functional."</p>
+            <div class="rating">
+                ★★★★☆
+            </div>
+            <p class="client-name">David Clark - CEO, Clark Innovations</p>
+        </div>
+        <div class="review">
+            <p>"The team was very responsive and creative. We couldn't be more satisfied with our new website."</p>
+            <div class="rating">
+                ★★★★★
+            </div>
+            <p class="client-name">Rachel Adams - Project Manager, SolarTech</p>
+        </div>
+        <div class="review">
+            <p>"Highly skilled professionals who delivered a top-notch website for our business. We’ve seen great results!"</p>
+            <div class="rating">
+                ★★★★★
+            </div>
+            <p class="client-name">Tom Wilson - CTO, Future Global Inc.</p>
+        </div>
+        <div class="review">
+            <p>"Their team is very knowledgeable and they helped us achieve our goals with their innovative web solutions."</p>
+            <div class="rating">
+                ★★★★★
+            </div>
+            <p class="client-name">Jessica Matthews - Marketing Director, GlobalTech Systems</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/923039597498" class="whatsapp-icon">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- JavaScript -->
+<script>
+    // Example: Dynamically add animations or other effects
+    document.addEventListener('DOMContentLoaded', () => {
+        // Add further interactive elements or scrolling effects
+    });
+</script>
+
+</body>
+</html>
